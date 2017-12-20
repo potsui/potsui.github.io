@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     var directoryPublic = directoryPackage + '/public';
     var directoryTemplates = directoryPrivate + '/templates';
     var directoryPrivateJsAll = directoryPrivate + '/**/*.js';
-    var directoryPrivateCssAll = directoryPrivate + '/**/*.css';
+    var directoryPrivateLessAll = directoryPrivate + '/**/*.less';
     var directoryPrivateHtmlAll = directoryPrivate + '/**/*.html';
 
     grunt.initConfig({
@@ -37,13 +37,6 @@ module.exports = function (grunt) {
                 dest: directoryPublic + '/about.html',
             },
         },
-        csslint: {
-            dist: {
-                src: [
-                    directoryPrivateCssAll,
-                ],
-            },
-        },
         cssmin: {
             build: {
                 src: directoryPrivate + '/css/main.css',
@@ -60,6 +53,17 @@ module.exports = function (grunt) {
                 directoryPrivateJsAll,
             ],
         },
+        less: {
+            development: {
+                options: {
+                    compress: true,
+                    yuicompress: true,
+                    optimization: 2
+                },
+                src: directoryPrivate + '/less/main.less',
+                dest: directoryPrivate + '/css/main.css',
+            },
+        },
         uglify: {
             options: {
                 footer: '\n',
@@ -74,7 +78,7 @@ module.exports = function (grunt) {
                 files: [
                     jshintrc,
                     gruntFile,
-                    directoryPrivateCssAll,
+                    directoryPrivateLessAll,
                     directoryPrivateHtmlAll,
                     directoryPrivateJsAll,
                 ],
@@ -91,12 +95,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', [
         'jshint',
-        'csslint',
+        'less',
         'cssmin',
         'uglify',
         'concat',
