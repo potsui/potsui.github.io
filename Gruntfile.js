@@ -27,21 +27,14 @@ module.exports = function (grunt) {
                     directoryTemplates + '/footer.html',
                 ],
                 dest: directoryPublic + '/index.html',
-            }
-        },
-        copy: {
-            images: {
-                files: [
-                    {
-                        expand: true,
-                        src: [
-                            directoryPrivate + '/**/*.jpg',
-                            directoryPrivate + '/**/*.png',
-                            directoryPrivate + '/**/*.gif',
-                        ],
-                        dest: directoryPublic + '/',
-                    },
+            },
+            about: {
+                src: [
+                    directoryTemplates + '/header.html',
+                    directoryTemplates + '/about.html',
+                    directoryTemplates + '/footer.html',
                 ],
+                dest: directoryPublic + '/about.html',
             },
         },
         csslint: {
@@ -107,6 +100,5 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'concat',
-        'copy',
     ]);
 };
