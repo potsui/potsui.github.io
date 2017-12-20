@@ -20,6 +20,26 @@ body {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
+.navbar {
+    .close {
+        :first-child {
+            transform: rotate(45deg);
+            position: relative;
+            top: 2.5px;
+        }
+
+        :nth-child(2) {
+            display: none;
+        }
+
+        :last-child {
+            transform: rotate(-45deg);
+            position: relative;
+            bottom: 2.5px;
+        }
+    }
+}
+
 .navpage {
     background-color: #fff; /* Fallback for browsers that don't support RGBA */
     background-color: rgba(255, 255, 255, 0.95);
