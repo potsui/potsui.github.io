@@ -1,10 +1,10 @@
 body {
-    color: black;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 .navpage {
-    background: white;
+    background-color: #fff; /* Fallback for browsers that don't support RGBA */
+    background-color: rgba(255, 255, 255, 0.95);
     height: 100%;
     position: fixed;
     width: 100%;
