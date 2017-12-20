@@ -12,12 +12,43 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+        
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        
+        <link href="css/main.min.css" rel="stylesheet">
+        <script src="scripts/main.min.js"></script>
     </head>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar" role="navigation">
+        <div class="container-fluid">
+            <button type="button" class="navpage-toggle navbar-toggle" aria-expanded="false" onclick="toggleNav()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </span>
+                <span class="close hidden">
+                    <span aria-hidden="true">&times;</span>
+                </span>
+            </button>
+        </div>
+        <div class="navpage hidden" id="navpage">
+            <ul class="nav">
+                <li><a href="#meet">MEET</a></li>
+                <li><a href="#learn">LEARN</a></li>
+                <li><a href="#do">DO</a></li>
+                <li><a href="#teach">TEACH</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
     </nav>
 
     <body>
+        <div class="container-fluid">
 <h1>Hello, world!</h1>
+        </div>
     </body>
 </html>
