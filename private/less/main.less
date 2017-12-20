@@ -18,9 +18,19 @@
 
 body {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
+
+    .body-content {
+        padding-top: 50px; /* So navbar doesn't cover up content */
+    }
 }
 
 .navbar {
+
+    position: fixed;
+    z-index: 10000;
+    background-color: #fff;
+    width: 100%;
+
     .close {
         :first-child {
             transform: rotate(45deg);
