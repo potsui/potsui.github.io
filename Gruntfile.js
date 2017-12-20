@@ -11,6 +11,14 @@ module.exports = function (grunt) {
     var directoryPrivateLessAll = directoryPrivate + '/**/*.less';
     var directoryPrivateHtmlAll = directoryPrivate + '/**/*.html';
 
+    function createPageSource(page) {
+        return [
+            directoryTemplates + '/header.html',
+            directoryTemplates + '/' + page + '.html',
+            directoryTemplates + '/footer.html',
+        ];
+    }
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: [
@@ -21,19 +29,15 @@ module.exports = function (grunt) {
                 separator: '\n',
             },
             index: {
-                src: [
-                    directoryTemplates + '/header.html',
-                    directoryTemplates + '/index.html',
-                    directoryTemplates + '/footer.html',
-                ],
+                src: createPageSource('index'),
                 dest: directoryPublic + '/index.html',
             },
+            photography: {
+                src: createPageSource('photography'),
+                dest: directoryPublic + '/photography.html',
+            },
             about: {
-                src: [
-                    directoryTemplates + '/header.html',
-                    directoryTemplates + '/about.html',
-                    directoryTemplates + '/footer.html',
-                ],
+                src: createPageSource('about'),
                 dest: directoryPublic + '/about.html',
             },
         },
