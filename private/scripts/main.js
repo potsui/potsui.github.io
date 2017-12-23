@@ -23,7 +23,7 @@ var main = (function(){
             ],
         },
         201710181: {
-            name: "Engineering Quad",
+            name: "Angst",
             files: [
                 "IMG_1869",
                 "IMG_1894",
@@ -31,7 +31,7 @@ var main = (function(){
             ],
         },
         201710182: {
-            name: "Angst",
+            name: "Engineering Quad",
             files: [
                 "IMG_1986",
                 "IMG_2007",
