@@ -1,6 +1,9 @@
 /* COLORS */
 @theme-color: #888;
 
+/* DIMENSIONS */
+@navbar-height: 50px;
+
 /* ANIMATIONS */
 
 @-webkit-keyframes animation-opacity {.mixin-opacity;}
@@ -26,8 +29,12 @@ body {
             color: black;
         }
     }
+
+    .text-right {
+        text-align: right;
+    }
     .body-content {
-        padding-top: 50px; /* So navbar doesn't cover up content */
+        padding-top: @navbar-height; /* So navbar doesn't cover up content */
     }
 }
 
@@ -95,6 +102,24 @@ body {
 }
 
 // PAGE SPECIFIC
+#page-index {
+    position: relative;
+    max-height: 90vh;
+
+    a {
+        text-decoration: none;
+    }
+
+    .heading-overlay {
+        background-color: #fff; /* Fallback for browsers that don't support RGBA */
+        background-color: rgba(255,255,255,.8);
+        padding-left: 10px;
+        padding-right: 10px;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+}
 
 #page-photography {
     text-align: center;
