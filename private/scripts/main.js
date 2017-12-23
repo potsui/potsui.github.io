@@ -40,18 +40,26 @@ var main = (function(){
     };
 
     var portfolio = {
-        culturemesh: {
+        0: {
+            name: "Salmon",
+            files: [],
+        },
+        1: {
             name: "CultureMesh",
             files: [],
         },
-        openedx: {
-            name: "Bulk Update for Open edX",
+        2: {
+            name: "OpenEdX",
             files: [],
         },
-        salmon: {
-            name: "Salmon",
+        3: {
+            name: "Cross Border Journalism",
             files: [],
-        }
+        },
+        4: {
+            name: "ThoughtBubble",
+            files: [],
+        },
     };
 
     var files = {
@@ -69,6 +77,7 @@ var main = (function(){
     }
 
     function loadFolder(page, folder) {
+        //TODO load based on url first
         var list = files[page][folder].files;
         var $page = $('#' + page + '-content');
         $page.empty();
@@ -83,7 +92,7 @@ var main = (function(){
         var currFolders = files[page];
         var $subheader = $('.subheader');
         $subheader.empty();
-        var keys = Object.keys(currFolders);
+        var keys = Object.keys(currFolders).reverse();
         $subheader.append('<p>');
         for (var i in keys) {
             var folder = keys[i];

@@ -3,6 +3,8 @@
 
 /* DIMENSIONS */
 @navbar-height: 50px;
+@icon-max-height: 30px;
+@standard-padding: 10px;
 
 /* ANIMATIONS */
 
@@ -26,13 +28,18 @@ body {
         color: @theme-color;
 
         &:hover {
-            color: black;
+            color: #000;
         }
+    }
+
+    .subheader {
+        text-align: center;
     }
 
     .text-right {
         text-align: right;
     }
+
     .body-content {
         padding-top: @navbar-height; /* So navbar doesn't cover up content */
     }
@@ -69,6 +76,7 @@ body {
     }
 
     .navpage {
+        animation: animation-opacity .1s;
         background-color: #fff; /* Fallback for browsers that don't support RGBA */
         background-color: rgba(255, 255, 255, 0.95);
         height: 100%;
@@ -89,7 +97,7 @@ body {
         }
 
         .linked-icon {
-            max-height: 30px;
+            max-height: @icon-max-height;
             opacity: .5;
 
             &:hover {
@@ -113,15 +121,15 @@ body {
     .heading-overlay {
         background-color: #fff; /* Fallback for browsers that don't support RGBA */
         background-color: rgba(255,255,255,.8);
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: @standard-padding;
+        padding-right: @standard-padding;
         position: absolute;
         bottom: 0px;
         right: 0px;
     }
 }
 
-#page-photography {
+#page-photography, #page-portfolio {
     text-align: center;
 
     #photography-content {
