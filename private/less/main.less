@@ -1,5 +1,5 @@
 /* COLORS */
-@theme-color: #444;
+@theme-color: #888;
 
 /* ANIMATIONS */
 
@@ -19,6 +19,13 @@
 body {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
 
+    a, a:visited {
+        color: @theme-color;
+
+        &:hover {
+            color: black;
+        }
+    }
     .body-content {
         padding-top: 50px; /* So navbar doesn't cover up content */
     }
