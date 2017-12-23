@@ -25,11 +25,16 @@ body {
 }
 
 .navbar {
-
     position: fixed;
     z-index: 10000;
     background-color: #fff;
     width: 100%;
+
+    .text-circle {
+        border: solid 1px;
+        border-radius: 50%;
+        padding: 4px;
+    }
 
     .close {
         :first-child {
@@ -81,3 +86,18 @@ body {
         }
     }
 }
+
+// PAGE SPECIFIC
+
+#page-photography {
+    text-align: center;
+
+    #photography-content {
+        img {
+            max-height: 100vh;
+            padding: 20px;
+        }
+    }
+}
+
+

@@ -2,13 +2,28 @@ var $ = jQuery;
 
 var main = (function(){
     var photography = {
-        20171214: [
+        201710181: [
+            "IMG_1869",
+            "IMG_1894",
+            "IMG_1935",
+        ],
+        201710182: [
+            "IMG_1986",
+            "IMG_2007",
+        ],
+        201712141: [
             "IMG_2771",
             "IMG_2780",
             "IMG_2782",
             "IMG_2823",
             "IMG_2846",
             "IMG_2856",
+        ],
+        201712142: [
+            "IMG_2811",
+            "IMG_2798",
+            "IMG_2917",
+            "IMG_2922",
         ],
     };
 
@@ -24,10 +39,9 @@ var main = (function(){
     function loadFolder(folder) {
         var list = files.photography[folder];
         $('#photography-content').empty();
-        $('#photography-content').append('<div class="row" id="' + folder + '"></div>');
+        $('#photography-content').append();
         for (var i in list) {
-            console.log(list[i]);
-            $('#' + folder).append('<div class="col-sm-8 col-md-8"><img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive"></div>');
+            $('#photography-content').append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
         }
     }
 
