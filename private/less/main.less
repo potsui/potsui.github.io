@@ -1,5 +1,7 @@
 /* COLORS */
 @theme-color: #888;
+@fade-in-opacity: .5;
+@fade-out-opacity: .9;
 
 /* DIMENSIONS */
 @navbar-height: 50px;
@@ -8,15 +10,26 @@
 
 /* ANIMATIONS */
 
-@-webkit-keyframes animation-opacity {.mixin-opacity;}
-@-moz-keyframes animation-opacity {.mixin-opacity;}
-@-ms-keyframes animation-opacity {.mixin-opacity;}
-@-o-keyframes animation-opacity {.mixin-opacity;}
-@keyframes animation-opacity {.mixin-opacity;}
+@-webkit-keyframes fade-in {.mixin-fade-in;}
+@-moz-keyframes fade-in {.mixin-fade-in;}
+@-ms-keyframes fade-in {.mixin-fade-in;}
+@-o-keyframes fade-in {.mixin-fade-in;}
+@keyframes fade-in {.mixin-fade-in;}
 
-.mixin-opacity () {
-    0% {opacity: .5;}
+.mixin-fade-in () {
+    0% {opacity: @fade-in-opacity;}
     100% {opacity: 1;}
+}
+
+@-webkit-keyframes fade-out {.mixin-fade-out;}
+@-moz-keyframes fade-out {.mixin-fade-out;}
+@-ms-keyframes fade-out {.mixin-fade-out;}
+@-o-keyframes fade-out {.mixin-fade-out;}
+@keyframes fade-out {.mixin-fade-out;}
+
+.mixin-fade-out () {
+    0% {opacity: @fade-out-opacity;}
+    100% {opacity: 0;}
 }
 
 /* RULES */
@@ -76,7 +89,7 @@ body {
     }
 
     .navpage {
-        animation: animation-opacity .1s;
+        animation: fade-in .1s;
         background-color: #fff; /* Fallback for browsers that don't support RGBA */
         background-color: rgba(255, 255, 255, 0.95);
         height: 100%;
@@ -98,10 +111,10 @@ body {
 
         .linked-icon {
             max-height: @icon-max-height;
-            opacity: .5;
+            opacity: @fade-in-opacity;
 
             &:hover {
-                animation: animation-opacity .5s;
+                animation: fade-in .5s;
                 cursor: pointer;
                 opacity: 1;
             }
@@ -138,6 +151,34 @@ body {
             padding: 20px;
         }
     }
+
+    #portfolio-content .project-container {
+        position: relative;
+
+        .project-overlay-title {
+            position: absolute;
+        }
+
+        .image-mask-overlay {
+            background-color: #fff;
+            opacity: @fade-out-opacity;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                opacity: 0;
+                animation: fade-out .2s;
+
+                project-overlay-title {
+                    opacity: 0;
+                }
+            }
+        }
+    }
 }
-
-

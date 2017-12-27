@@ -42,22 +42,42 @@ var main = (function(){
     var portfolio = {
         0: {
             name: "Salmon",
-            files: [],
+            title: "Swim upstream with Salmon",
+            subtitle: "A cross-platform mobile application for the classroom and beyond",
+            description: "Join virtual classrooms and anonymously ask and answer questions. Urban Teens Exploring Technology Demo Day 2016 Honorable Mention. Coach, Senior Project Manager, Developer.",
+            files: [
+                "salmon-thumbnail",
+            ],
         },
         1: {
             name: "CultureMesh",
-            files: [],
+            title: "CultureMesh",
+            description: "Created mocks for <a href=\'https://culturemesh.com/\'>CultureMesh</a>, a nonprofit social network aiming to connect the world's disporas, through Stanford Code the Change. Adobe Illustrator.",
+            link: "https://www.behance.net/gallery/55034375/CultureMesh-Mobile-Website",
+            linkText: "View it on Behance",
+            files: [
+                "culturemesh-thumbnail",
+            ],
         },
         2: {
             name: "OpenEdX",
-            files: [],
+            title: "Bulk Update Utility for OpenEdX",
+            subtitle: "CURIS Software Engineering Intern, Stanford Open edX (VPTL). June - September 2017.",
+            description: "Implemented bulk update feature for Stanford <a href='https://lagunita.stanford.edu/'>Lagunita</a>, an instance of the open source MOOC platform <a href='https://open.edx.org/'>Open edX</a>. This utility allows instructors to modify problem settings for an entire course with a single interaction. The update is handled as an asynchronous Celery task. Dramatically reduced workload of CourseOps team for handling setting update requests.",
+            link: "files/openedx-poster.pdf",
+            linkText: "View project poster",
+            files: [
+                "openedx-thumbnail",
+            ],
         },
         3: {
             name: "Cross Border Journalism",
+            description: "",
             files: [],
         },
         4: {
             name: "ThoughtBubble",
+            description: "",
             files: [],
         },
     };
@@ -78,11 +98,30 @@ var main = (function(){
 
     function loadFolder(page, folder) {
         //TODO load based on url first
-        var list = files[page][folder].files;
+        var project = files[page][folder];
+        var list = project.files;
         var $page = $('#' + page + '-content');
         $page.empty();
+        var content = '';
+        if (project.title) content += '<br><h3>' + project.title + '</h3>';
+        if (project.subtitle) content += '<h4>' + project.subtitle + '</h4>';
+        if (project.description) content += '<p>' + project.description + '</p>';
+        content += '<div class="project-container"><img src="images/' + page + '/' + folder + '/' + list[0] +'.jpg" class="img-responsive">';
+        if (project.link) content += '<a href="' + project.link + '" class="image-mask-overlay" target="_blank"><h3 class="project-overlay-title">' + project.linkText + '</h3></a>';
+        content += '</div>';
+        $page.append(content);
+        //TODO scroll to top
+        //TODO Underline current folder
+    }
+
+    function loadPhotos(folder) {
+        //TODO load based on url first
+        var project = files.photography[folder];
+        var list = project.files;
+        var $page = $('#photography-content');
+        $page.empty();
         for (var i in list) {
-            $page.append('<img src="images/' + page + '/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
+            $page.append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
         }
         //TODO scroll to top
         //TODO Underline current folder
@@ -98,7 +137,11 @@ var main = (function(){
             var folder = keys[i];
             var name = currFolders[folder].name;
             var url = '#' + nameToURL(name);
-            $subheader.append('<a href="' + url + '" onclick="main.loadFolder(\'photography\', \'' + folder + '\')">' + name + '</a>');
+            if (page === 'photography') {
+                $subheader.append('<a href="' + url + '" onclick="main.loadPhotos(\'' + folder + '\')">' + name + '</a>');
+            } else if (page === 'portfolio') {
+                $subheader.append('<a href="' + url + '" onclick="main.loadFolder(\'' + page + '\', \'' + folder + '\')">' + name + '</a>');
+            }
             if (i != keys.length - 1) {
                 $subheader.append(' | ');
             }
@@ -109,6 +152,7 @@ var main = (function(){
     return {
         toggleNav: toggleNav,
         loadFolder: loadFolder,
+        loadPhotos: loadPhotos,
         loadSubheader: loadSubheader,
     };
 })();
