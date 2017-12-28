@@ -111,8 +111,15 @@ var main = (function(){
         $('.navpage-toggle .navpage-toggle-icon').toggleClass('close');
     }
 
+    function selectSubheader(folder) {
+        var $subheader = $('.subheader');
+        $subheader.children().removeClass('underline');
+        $('.subheader-' + folder).addClass('underline');
+    }
+
     function loadFolder(folder) {
         //TODO load based on url first
+        selectSubheader(folder);
         var project = files.projects[folder];
         var list = project.files;
         var $page = $('#projects-content');
@@ -132,6 +139,7 @@ var main = (function(){
 
     function loadPhotos(folder) {
         //TODO load based on url first
+        selectSubheader(folder);
         var project = files.photography[folder];
         var list = project.files;
         var $page = $('#photography-content');
@@ -154,9 +162,9 @@ var main = (function(){
             var name = currFolders[folder].name;
             var url = '#' + nameToURL(name);
             if (page === 'photography') {
-                $subheader.append('<a href="' + url + '" onclick="main.loadPhotos(\'' + folder + '\')">' + name + '</a>');
+                $subheader.append('<a href="' + url + '" class=\'subheader-' + folder + '\' onclick="main.loadPhotos(\'' + folder + '\')">' + name + '</a>');
             } else if (page === 'projects') {
-                $subheader.append('<a href="' + url + '" onclick="main.loadFolder(\'' + folder + '\')">' + name + '</a>');
+                $subheader.append('<a href="' + url + '" class=\'subheader-' + folder + '\' onclick="main.loadFolder(\'' + folder + '\')">' + name + '</a>');
             }
             if (i != keys.length - 1) {
                 $subheader.append(' | ');
