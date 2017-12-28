@@ -118,19 +118,16 @@ var main = (function(){
     }
 
     function checkHash(page, defaultFolder) {
-        console.log("Checking hash");
         var hash = window.location.hash;
         if (hash) {
             defaultFolder = hash.substr(1);
         } else {
             window.location.hash = defaultFolder;
         }
-        console.log("defaultFolder=" + defaultFolder);
         return defaultFolder;
     }
 
     function loadProject(folder) {
-        console.log(folder);
         selectSubheader(folder);
         var project = files.projects[folder];
         var list = project.files;
