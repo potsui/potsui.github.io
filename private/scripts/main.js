@@ -42,9 +42,11 @@ var main = (function(){
     var portfolio = {
         0: {
             name: "Salmon",
-            title: "Swim upstream with Salmon",
-            subtitle: "A cross-platform mobile application for the classroom and beyond",
-            description: "Join virtual classrooms and anonymously ask and answer questions. Urban Teens Exploring Technology Demo Day 2016 Honorable Mention. Coach, Senior Project Manager, Developer.",
+            title: "Swim upstream with Salmon: A cross-platform mobile application for the classroom and beyond",
+            description: "Join virtual classrooms and anonymously ask and answer questions. Urban Teens Exploring Technology Demo Day 2016 Honorable Mention.",
+            role: "Coach, Senior Project Manager, Developer",
+            link: "https://www.youtube.com/watch?v=Ujqj_eoWjmA",
+            linkText: "VIEW APP DEMO",
             files: [
                 "salmon-thumbnail",
             ],
@@ -52,9 +54,10 @@ var main = (function(){
         1: {
             name: "CultureMesh",
             title: "CultureMesh",
-            description: "Created mocks for <a href=\'https://culturemesh.com/\'>CultureMesh</a>, a nonprofit social network aiming to connect the world's disporas, through Stanford Code the Change. Adobe Illustrator.",
+            description: "Mocks for <a href=\'https://culturemesh.com/\'>CultureMesh</a>, a nonprofit social network aiming to connect the world's disporas, through Stanford Code the Change.",
+            role: "UI Design Team",
             link: "https://www.behance.net/gallery/55034375/CultureMesh-Mobile-Website",
-            linkText: "View it on Behance",
+            linkText: "VIEW ON BEHANCE",
             files: [
                 "culturemesh-thumbnail",
             ],
@@ -62,23 +65,35 @@ var main = (function(){
         2: {
             name: "OpenEdX",
             title: "Bulk Update Utility for OpenEdX",
-            subtitle: "CURIS Software Engineering Intern, Stanford Open edX (VPTL). June - September 2017.",
-            description: "Implemented bulk update feature for Stanford <a href='https://lagunita.stanford.edu/'>Lagunita</a>, an instance of the open source MOOC platform <a href='https://open.edx.org/'>Open edX</a>. This utility allows instructors to modify problem settings for an entire course with a single interaction. The update is handled as an asynchronous Celery task. Dramatically reduced workload of CourseOps team for handling setting update requests.",
+            description: "Allows instructors to modify problem settings for an entire course with a single interaction. For Stanford <a href='https://lagunita.stanford.edu/'>Lagunita</a>, an instance of the open source MOOC platform <a href='https://open.edx.org/'>OpenEdX</a>.",
+            role: "CURIS Software Engineering Intern, Stanford OpenEdX (VPTL)",
             link: "files/openedx-poster.pdf",
-            linkText: "View project poster",
+            linkText: "VIEW PROJECT POSTER",
             files: [
                 "openedx-thumbnail",
             ],
         },
         3: {
             name: "Cross Border Journalism",
-            description: "",
-            files: [],
+            title: "Cross Border Journalism",
+            description: "Web platform for investigative journalists to collaborate on tasks across the world.",
+            role: "Full-Stack Developer",
+            link: "https://github.com/potsui/cross-border-journalism/",
+            linkText: "VIEW ON GITHUB",
+            files: [
+                "cross-border-journalism-thumbnail",
+            ],
         },
         4: {
             name: "ThoughtBubble",
-            description: "",
-            files: [],
+            title: "Get help talking about the tough questions. Expand your bubble.",
+            description: "ThoughtBubble is a native Android app that allows you to be forthcoming about identities and experiences you're willing to share, guide your friends in framing the tough questions, and facilitate a larger conversation across multiple identities. Most Social Impact Award, CS 147 Showcase 2017.",
+            role: "Android Backend and Web Developer",
+            link: "https://web.stanford.edu/class/cs147/projects/education/thoughtbubble/",
+            linkText: "VIEW PROJECT WEBSITE",
+            files: [
+                "thoughtbubble-thumbnail",
+            ],
         },
     };
 
@@ -96,18 +111,19 @@ var main = (function(){
         $('.navpage-toggle .navpage-toggle-icon').toggleClass('close');
     }
 
-    function loadFolder(page, folder) {
+    function loadFolder(folder) {
         //TODO load based on url first
-        var project = files[page][folder];
+        var project = files.portfolio[folder];
         var list = project.files;
-        var $page = $('#' + page + '-content');
+        var $page = $('#portfolio-content');
         $page.empty();
-        var content = '';
+        var content = '<div class="col-sm-1 col-md-1"></div><div class="col-sm-10 col-md-10">';
         if (project.title) content += '<br><h3>' + project.title + '</h3>';
-        if (project.subtitle) content += '<h4>' + project.subtitle + '</h4>';
         if (project.description) content += '<p>' + project.description + '</p>';
-        content += '<div class="project-container"><img src="images/' + page + '/' + folder + '/' + list[0] +'.jpg" class="img-responsive">';
+        content += '<div class="project-container"><img src="images/portfolio/' + folder + '/' + list[0] +'.jpg" class="img-responsive">';
         if (project.link) content += '<a href="' + project.link + '" class="image-mask-overlay" target="_blank"><h3 class="project-overlay-title">' + project.linkText + '</h3></a>';
+        content += '</div>';
+        if (project.role) content += '<p>' + project.role + '</p>';
         content += '</div>';
         $page.append(content);
         //TODO scroll to top
@@ -140,7 +156,7 @@ var main = (function(){
             if (page === 'photography') {
                 $subheader.append('<a href="' + url + '" onclick="main.loadPhotos(\'' + folder + '\')">' + name + '</a>');
             } else if (page === 'portfolio') {
-                $subheader.append('<a href="' + url + '" onclick="main.loadFolder(\'' + page + '\', \'' + folder + '\')">' + name + '</a>');
+                $subheader.append('<a href="' + url + '" onclick="main.loadFolder(\'' + folder + '\')">' + name + '</a>');
             }
             if (i != keys.length - 1) {
                 $subheader.append(' | ');
