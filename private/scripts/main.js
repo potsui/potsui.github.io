@@ -117,8 +117,20 @@ var main = (function(){
         $('.subheader-' + folder).addClass('underline');
     }
 
-    function loadFolder(folder) {
-        //TODO load based on url first
+    function checkHash(page, defaultFolder) {
+        console.log("Checking hash");
+        var hash = window.location.hash;
+        if (hash) {
+            defaultFolder = hash.substr(1);
+        } else {
+            window.location.hash = defaultFolder;
+        }
+        console.log("defaultFolder=" + defaultFolder);
+        return defaultFolder;
+    }
+
+    function loadProject(folder) {
+        console.log(folder);
         selectSubheader(folder);
         var project = files.projects[folder];
         var list = project.files;
@@ -133,12 +145,10 @@ var main = (function(){
         if (project.role) content += '<p>' + project.role + '</p>';
         content += '</div>';
         $page.append(content);
-        //TODO scroll to top
-        //TODO Underline current folder
+        window.scrollTo(0,0);
     }
 
     function loadPhotos(folder) {
-        //TODO load based on url first
         selectSubheader(folder);
         var project = files.photography[folder];
         var list = project.files;
@@ -147,8 +157,7 @@ var main = (function(){
         for (var i in list) {
             $page.append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
         }
-        //TODO scroll to top
-        //TODO Underline current folder
+        window.scrollTo(0,0);
     }
 
     function loadSubheader(page) {
@@ -160,11 +169,11 @@ var main = (function(){
         for (var i in keys) {
             var folder = keys[i];
             var name = currFolders[folder].name;
-            var url = '#' + nameToURL(name);
+            var url = '#' + keys[i];
             if (page === 'photography') {
                 $subheader.append('<a href="' + url + '" class=\'subheader-' + folder + '\' onclick="main.loadPhotos(\'' + folder + '\')">' + name + '</a>');
             } else if (page === 'projects') {
-                $subheader.append('<a href="' + url + '" class=\'subheader-' + folder + '\' onclick="main.loadFolder(\'' + folder + '\')">' + name + '</a>');
+                $subheader.append('<a href="' + url + '" class=\'subheader-' + folder + '\' onclick="main.loadProject(\'' + folder + '\')">' + name + '</a>');
             }
             if (i != keys.length - 1) {
                 $subheader.append(' | ');
@@ -175,7 +184,8 @@ var main = (function(){
 
     return {
         toggleNav: toggleNav,
-        loadFolder: loadFolder,
+        checkHash: checkHash,
+        loadProject: loadProject,
         loadPhotos: loadPhotos,
         loadSubheader: loadSubheader,
     };

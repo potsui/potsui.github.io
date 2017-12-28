@@ -70,7 +70,8 @@
 </div>
 <script>
     main.loadSubheader('projects');
-    main.loadFolder(4);
+    var hash = main.checkHash('projects', 4);
+    main.loadProject(hash);
 </script>
             <br>
         </div>
