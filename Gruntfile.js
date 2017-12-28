@@ -51,6 +51,16 @@ module.exports = function (grunt) {
                 dest: directoryPublic + '/css/main.min.css',
             },
         },
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: directoryPrivate + '/images',
+                    src: ['**/*.{png,jpg,gif,svg}'],
+                    dest: directoryPublic + '/images',
+                }]
+            }
+        },
         jshint: {
             options: {
                 ignores: [
@@ -102,6 +112,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -113,5 +124,6 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'concat',
+        'imagemin',
     ]);
 };

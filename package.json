@@ -20,5 +20,8 @@
     "grunt-contrib-uglify": "^3.2.1",
     "grunt-contrib-watch": "^1.0.0",
     "less": "^2.7.3"
+  },
+  "dependencies": {
+    "grunt-contrib-imagemin": "^2.0.1"
   }
 }
