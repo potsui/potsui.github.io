@@ -10,6 +10,7 @@ module.exports = function (grunt) {
     var directoryPrivateJsAll = directoryPrivate + '/**/*.js';
     var directoryPrivateLessAll = directoryPrivate + '/**/*.less';
     var directoryPrivateHtmlAll = directoryPrivate + '/**/*.html';
+    var directoryPrivateImagesAll = directoryPrivate + '**/*.{png,jpg,gif,svg}';
 
     function createPageSource(page) {
         return [
@@ -92,16 +93,48 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            dist: {
+            grunt: {
                 files: [
-                    jshintrc,
                     gruntFile,
-                    directoryPrivateLessAll,
-                    directoryPrivateHtmlAll,
-                    directoryPrivateJsAll,
                 ],
                 tasks: [
                     'default',
+                ],
+            },
+            js: {
+                files: [
+                    jshintrc,
+                    directoryPrivateJsAll,
+                ],
+                tasks: [
+                    'jshint',
+                    'uglify',
+                ],
+            },
+            less: {
+                files: [
+                    jshintrc,
+                    directoryPrivateLessAll,
+                ],
+                tasks: [
+                    'less',
+                    'cssmin',
+                ],
+            },
+            text: {
+                files: [
+                    directoryPrivateHtmlAll,
+                ],
+                tasks: [
+                    'concat',
+                ],
+            },
+            images: {
+                files: [
+                    directoryPrivateImagesAll,
+                ],
+                tasks: [
+                    'imagemin',
                 ],
             },
         },
