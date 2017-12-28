@@ -39,7 +39,7 @@ var main = (function(){
         },
     };
 
-    var portfolio = {
+    var projects = {
         0: {
             name: "Salmon",
             title: "Swim upstream with Salmon: A cross-platform mobile application for the classroom and beyond",
@@ -99,7 +99,7 @@ var main = (function(){
 
     var files = {
         photography: photography,
-        portfolio: portfolio,
+        projects: projects,
     };
 
     function nameToURL(name) {
@@ -113,14 +113,14 @@ var main = (function(){
 
     function loadFolder(folder) {
         //TODO load based on url first
-        var project = files.portfolio[folder];
+        var project = files.projects[folder];
         var list = project.files;
-        var $page = $('#portfolio-content');
+        var $page = $('#projects-content');
         $page.empty();
         var content = '<div class="col-sm-1 col-md-1"></div><div class="col-sm-10 col-md-10">';
         if (project.title) content += '<br><h3>' + project.title + '</h3>';
         if (project.description) content += '<p>' + project.description + '</p>';
-        content += '<div class="project-container"><img src="images/portfolio/' + folder + '/' + list[0] +'.jpg" class="img-responsive">';
+        content += '<div class="project-container"><img src="images/projects/' + folder + '/' + list[0] +'.jpg" class="img-responsive">';
         if (project.link) content += '<a href="' + project.link + '" class="image-mask-overlay" target="_blank"><h3 class="project-overlay-title">' + project.linkText + '</h3></a>';
         content += '</div>';
         if (project.role) content += '<p>' + project.role + '</p>';
@@ -155,7 +155,7 @@ var main = (function(){
             var url = '#' + nameToURL(name);
             if (page === 'photography') {
                 $subheader.append('<a href="' + url + '" onclick="main.loadPhotos(\'' + folder + '\')">' + name + '</a>');
-            } else if (page === 'portfolio') {
+            } else if (page === 'projects') {
                 $subheader.append('<a href="' + url + '" onclick="main.loadFolder(\'' + folder + '\')">' + name + '</a>');
             }
             if (i != keys.length - 1) {
