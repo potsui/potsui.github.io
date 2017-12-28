@@ -46,10 +46,10 @@ module.exports = function (grunt) {
             },
         },
         cssmin: {
-            build: {
+            main: {
                 src: directoryPrivate + '/css/main.css',
-                dest: directoryPublic + '/css/main.min.css'
-            }
+                dest: directoryPublic + '/css/main.min.css',
+            },
         },
         jshint: {
             options: {
