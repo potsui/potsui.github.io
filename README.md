@@ -14,8 +14,4 @@ npm install
 ```
 grunt watch
 ```
-You can also run tasks manually if you want:
-```
-grunt default
-```
 4. Check out how I organize my files in `private/`.
