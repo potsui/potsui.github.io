@@ -37,6 +37,21 @@ var main = (function(){
                 "IMG_2007",
             ],
         },
+        0: {
+            name: "XXXX",
+            files: [
+                "Lands End",
+                "IMG_01",
+                "IMG_02",
+                "IMG_03",
+                "IMG_04",
+                "The Kids Aren't Alright",
+                "IMG_100",
+                "IMG_101",
+                "IMG_102",
+                "IMG_103",
+            ]
+        }
     };
 
     var projects = {
@@ -152,7 +167,11 @@ var main = (function(){
         var $page = $('#photography-content');
         $page.empty();
         for (var i in list) {
-            $page.append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
+            if (list[i].substr(0,4) == "IMG_") {
+                $page.append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
+            } else {
+                $page.append('<br><p>' + list[i] + '</p>');
+            }
         }
         window.scrollTo(0,0);
     }
