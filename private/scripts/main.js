@@ -40,6 +40,10 @@ var main = (function(){
         0: {
             name: "XXXX",
             files: [
+                "Summer",
+                "IMG_05",
+                "IMG_06",
+                "IMG_07",
                 "Lands End",
                 "IMG_01",
                 "IMG_02",
@@ -170,7 +174,7 @@ var main = (function(){
             if (list[i].substr(0,4) == "IMG_") {
                 $page.append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
             } else {
-                $page.append('<br><p>' + list[i] + '</p>');
+                $page.append('<br><br><p>' + list[i] + '</p>');
             }
         }
         window.scrollTo(0,0);
