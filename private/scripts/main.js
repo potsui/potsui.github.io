@@ -41,6 +41,10 @@ var main = (function(){
             name: "XXXX",
             files: [
                 "IMG_27",
+                "Monta&ntilde;a de Oro",
+                "IMG_32",
+                "IMG_34",
+                "IMG_33",
                 "Los Angeles",
                 "IMG_20",
                 "IMG_21",
