@@ -116,6 +116,17 @@ var main = (function(){
                 "thoughtbubble-thumbnail",
             ],
         },
+		5: {
+			name: "Shared Story",
+            title: "Constructing identity and local community through tangible exploration.",
+            description: "Students in highly segregated communities rarely have a chance to share their life stories with people from other backgrounds. They may also be unaware of how their life story has been shaped by their community history. Shared Story aims to help middle and high school students reflect on their life stories and share these stories with others in their community, via a map and timeline on a tangible user interface (TUI) table, where individuals construct physical and digital representations of important events in their lives and their communities. They can also then share their stories and explore others online via an integrated web application. By viewing the events placed by themselves and others, young learners will become aware of how others in their community lead their lives and what places and events have shaped them.",
+            role: "Co-Creator",
+            link: "files/sharedstory-presentation.pdf",
+            linkText: "VIEW PRESENTATION SLIDES",
+            files: [
+                "sharedstory-thumbnail",
+            ],
+		}
     };
 
     var files = {
