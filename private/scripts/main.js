@@ -110,7 +110,7 @@ var main = (function(){
             title: "Get help talking about the tough questions. Expand your bubble.",
             description: "ThoughtBubble is a native Android app that allows you to be forthcoming about identities and experiences you're willing to share, guide your friends in framing the tough questions, and facilitate a larger conversation across multiple identities. Most Social Impact Award, CS 147 Showcase 2017.",
             role: "Android Backend and Web Developer",
-            link: "https://web.stanford.edu/class/cs147/projects/education/thoughtbubble/",
+            link: "https://hci.stanford.edu/courses/cs147/2017/au/projects/education/thoughtbubble",
             linkText: "VIEW PROJECT WEBSITE",
             files: [
                 "thoughtbubble-thumbnail",
