@@ -118,17 +118,17 @@ var main = (function(){
                 "openedx-thumbnail",
             ],
         },
-        3: {
-            name: "Cross Border Journalism",
-            title: "Cross Border Journalism",
-            description: "Web platform for investigative journalists to collaborate on tasks across the world.",
-            role: "Full-Stack Developer",
-            link: "https://github.com/potsui/cross-border-journalism/",
-            linkText: "VIEW ON GITHUB",
-            files: [
-                "cross-border-journalism-thumbnail",
-            ],
-        },
+//        3: {
+//            name: "Cross Border Journalism",
+//            title: "Cross Border Journalism",
+//            description: "Web platform for investigative journalists to collaborate on tasks across the world.",
+//            role: "Full-Stack Developer",
+//            link: "https://github.com/potsui/cross-border-journalism/",
+//            linkText: "VIEW ON GITHUB",
+//            files: [
+//                "cross-border-journalism-thumbnail",
+//            ],
+//        },
         4: {
             name: "ThoughtBubble",
             title: "Get help talking about the tough questions. Expand your bubble.",
