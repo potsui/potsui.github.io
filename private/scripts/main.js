@@ -2,6 +2,29 @@ var $ = jQuery;
 
 var main = (function(){
     var photography = {
+        2018: {
+            name: "Abroad",
+            files: [
+              "IMG_1",
+              "IMG_2",
+              "IMG_3",
+              "IMG_6",
+              "IMG_5",
+              "IMG_7",
+              "IMG_8",
+              "IMG_9",
+              "IMG_11",
+              "IMG_12",
+              "IMG_13",
+              "IMG_14",
+              "IMG_15",
+              "IMG_16",
+              "IMG_17",
+              "IMG_18",
+              "IMG_19",
+              "IMG_20",
+            ],
+        },
         201712141: {
             name: "Floral Velvet Blues",
             files: [
