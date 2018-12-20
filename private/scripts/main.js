@@ -2,6 +2,15 @@ var $ = jQuery;
 
 var main = (function(){
     var photography = {
+        20181202: {
+            name: "Autumn",
+            files: [
+              "DSC00990",
+              "DSC00991",
+              "DSC01083",
+              "DSC01073",
+            ],
+        },
         201804: {
             name: "Berlin",
             files: [
@@ -208,11 +217,7 @@ var main = (function(){
         var $page = $('#photography-content');
         $page.empty();
         for (var i in list) {
-            if (list[i].substr(0,4) == "IMG_") {
-                $page.append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
-            } else {
-                $page.append('<br><br><p>' + list[i] + '</p>');
-            }
+          $page.append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
         }
         window.scrollTo(0,0);
     }
