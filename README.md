@@ -1,9 +1,9 @@
 # potsui.github.io
 
-Development playground for my website: [tsuipo.com](https://www.tsuipo.com)
+Development playground for my website: [potsui.github.io](https://potsui.github.io/)
 
 ### About
-Built with HTML, CSS with [Less](http://lesscss.org/), JavaScript with [jQuery](https://jquery.com/), and [Bootstrap](https://getbootstrap.com/docs/3.3/). I develop within the `private/` directory and use [Grunt](https://gruntjs.com/) to build into minified, compressed output files inside `public/`.
+Built with HTML, CSS with [Less](http://lesscss.org/), JavaScript with [jQuery](https://jquery.com/), and [Bootstrap](https://getbootstrap.com/docs/3.3/). I develop within the `private/` directory and use [Grunt](https://gruntjs.com/) to build into minified, compressed output files.
 
 ### Set up
 If you would like to mimic my workflow, then here are some starter steps:
@@ -16,4 +16,3 @@ npm install
 ```
 grunt watch
 ```
-4. Check out how I organize my files in `private/`.
