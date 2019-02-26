@@ -8,6 +8,13 @@
 @icon-max-height: 30px;
 @standard-padding: 10px;
 
+/* MEDIA QUERIES */
+@wide-screen-down: ~'(max-width: 1199px)';
+@desktop-down: ~'(max-width: 991px)';
+@tablet-down: ~'(max-width: 767px)';
+@phone-down: ~'(max-width: 480px)';
+@small-phone-down: ~'(max-width: 320px)';
+
 /* ANIMATIONS */
 
 @-webkit-keyframes fade-in {.mixin-fade-in;}
@@ -139,14 +146,27 @@ body {
         text-decoration: none;
     }
 
-    .heading-overlay {
-        background-color: #fff; /* Fallback for browsers that don't support RGBA */
-        background-color: rgba(255,255,255,.8);
-        padding-left: @standard-padding;
-        padding-right: @standard-padding;
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
+    #tagline {
+        padding: @standard-padding (@standard-padding + 100px);
+
+        a {
+            margin: 40px;
+        }
+
+        h3 {
+            color: @theme-color;
+            font-size: 8rem;
+            font-weight: 100;
+            margin: 40px;
+        }
+
+        @media @phone-down {
+            padding: @standard-padding;
+
+             h3 {
+                font-size: 4rem;
+            }
+        }
     }
 }
 
