@@ -3,9 +3,9 @@ module.exports = function (grunt) {
 
   var jshintrc = '.jshintrc';
   var gruntFile = 'Gruntfile.js';
-  var directoryPackage = '.';
+  var directoryPackage = '..';
   var directoryPrivate = directoryPackage + '/private';
-  var directoryPublic = directoryPackage + '/public';
+  var directoryPublic = directoryPackage;
   var directoryTemplates = directoryPrivate + '/templates';
   var directoryPrivateJsAll = directoryPrivate + '/**/*.js';
   var directoryPrivateLessAll = directoryPrivate + '/**/*.less';
