@@ -2,15 +2,6 @@ var $ = jQuery;
 
 var main = (function(){
     var photography = {
-        20181202: {
-            name: "Autumn",
-            files: [
-              "DSC00990",
-              "DSC00991",
-              "DSC01083",
-              "DSC01073",
-            ],
-        },
         201804: {
             name: "Berlin",
             files: [
@@ -38,12 +29,9 @@ var main = (function(){
         201712141: {
             name: "Floral Velvet Blues",
             files: [
-                "IMG_2771",
-                "IMG_2780",
                 "IMG_2782",
-                "IMG_2823",
                 "IMG_2846",
-                "IMG_2856",
+                "IMG_2780",
             ],
         },
         201712142: {
