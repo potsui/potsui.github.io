@@ -127,18 +127,7 @@ var main = (function(){
                 "openedx-thumbnail",
             ],
         },
-//        3: {
-//            name: "Cross Border Journalism",
-//            title: "Cross Border Journalism",
-//            description: "Web platform for investigative journalists to collaborate on tasks across the world.",
-//            role: "Full-Stack Developer",
-//            link: "https://github.com/potsui/cross-border-journalism/",
-//            linkText: "VIEW ON GITHUB",
-//            files: [
-//                "cross-border-journalism-thumbnail",
-//            ],
-//        },
-        4: {
+        3: {
             name: "ThoughtBubble",
             title: "Get help talking about the tough questions. Expand your bubble.",
             description: "ThoughtBubble is a native Android app that allows you to be forthcoming about identities and experiences you're willing to share, guide your friends in framing the tough questions, and facilitate a larger conversation across multiple identities. Most Social Impact Award, CS 147 Showcase 2017.",
@@ -149,7 +138,7 @@ var main = (function(){
                 "thoughtbubble-thumbnail",
             ],
         },
-		5: {
+		4: {
 			name: "Shared Story",
             title: "Constructing identity and local community through tangible exploration.",
             description: "Students in highly segregated communities rarely have a chance to share their life stories with people from other backgrounds. They may also be unaware of how their life story has been shaped by their community history. Shared Story aims to help middle and high school students reflect on their life stories and share these stories with others in their community, via a map and timeline on a tangible user interface (TUI) table, where individuals construct physical and digital representations of important events in their lives and their communities. They can also then share their stories and explore others online via an integrated web application. By viewing the events placed by themselves and others, young learners will become aware of how others in their community lead their lives and what places and events have shaped them.",
