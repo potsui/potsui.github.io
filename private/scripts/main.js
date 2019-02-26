@@ -176,13 +176,23 @@ var main = (function(){
     var $page = $('#projects-content');
     $page.empty();
     var content = '<div class="col-sm-1 col-md-1"></div><div class="col-sm-10 col-md-10">';
-    if (project.title) content += '<br><h3>' + project.title + '</h3>';
-    if (project.description) content += '<p>' + project.description + '</p>';
+
+    if (project.title) {
+      content += '<br><h3>' + project.title + '</h3>';
+    }
+    if (project.description) {
+      content += '<p>' + project.description + '</p>';
+    }
     content += '<div class="project-container"><img src="images/projects/' + folder + '/' + list[0] +'.jpg" class="img-responsive">';
-    if (project.link) content += '<a href="' + project.link + '" class="image-mask-overlay" target="_blank"><h3 class="project-overlay-title">' + project.linkText + '</h3></a>';
+    if (project.link) {
+      content += '<a href="' + project.link + '" class="image-mask-overlay" target="_blank"><h3 class="project-overlay-title">' + project.linkText + '</h3></a>';
+    }
     content += '</div>';
-    if (project.role) content += '<p>' + project.role + '</p>';
+    if (project.role) {
+      content += '<p>' + project.role + '</p>';
+    }
     content += '</div>';
+
     $page.append(content);
     window.scrollTo(0,0);
   }
