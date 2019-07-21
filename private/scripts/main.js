@@ -35,13 +35,11 @@ var main = (function(){
     201805: {
       name: "Switzerland",
       files: [
-        "IMG_9",
-        "IMG_11",
         "IMG_12",
         "IMG_13",
         "IMG_14",
-        "IMG_15",
         "IMG_18",
+        "IMG_15",
         "IMG_20",
         "IMG_17",
       ],
@@ -93,7 +91,6 @@ var main = (function(){
         "IMG_16",
         "IMG_31",
         "IMG_13",
-        "IMG_02",
         "IMG_04",
         "IMG_101",
         "IMG_102",
