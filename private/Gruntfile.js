@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   var directoryPackage = '..';
   var directoryPrivate = directoryPackage + '/private';
   var directoryPublic = directoryPackage;
+  var directoryScripts = directoryPrivate + '/scripts';
   var directoryTemplates = directoryPrivate + '/templates';
   var directoryPrivateJsAll = directoryPrivate + '/**/*.js';
   var directoryPrivateLessAll = directoryPrivate + '/**/*.less';
@@ -69,7 +70,7 @@ module.exports = function (grunt) {
       },
       dist: [
         gruntFile,
-        directoryPrivateJsAll,
+        directoryScripts,
       ],
     },
     less: {

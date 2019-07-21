@@ -2,6 +2,26 @@ var $ = jQuery;
 
 var main = (function(){
   var photography = {
+    grad: {
+      name: "Grad",
+      files: [
+        "IMG_6",
+        "IMG_3",
+        "IMG_2",
+        "IMG_4",
+        "IMG_5",
+        "IMG_7",
+        "IMG_15",
+        "IMG_14",
+        "IMG_9",
+        "IMG_12",
+        "IMG_13",
+        "IMG_19",
+        "IMG_20",
+        "IMG_8",
+        "IMG_16",
+      ],
+    },
     201804: {
       name: "Berlin",
       files: [
