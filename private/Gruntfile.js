@@ -38,10 +38,6 @@ module.exports = function (grunt) {
         src: createPageSource('projects'),
         dest: directoryPublic + '/projects.html',
       },
-      photography: {
-        src: createPageSource('photography'),
-        dest: directoryPublic + '/photography.html',
-      },
       about: {
         src: createPageSource('about'),
         dest: directoryPublic + '/about.html',
