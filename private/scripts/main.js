@@ -1,103 +1,6 @@
 var $ = jQuery;
 
 var main = (function(){
-  var photography = {
-    grad: {
-      name: "Grad",
-      files: [
-        "IMG_6",
-        "IMG_3",
-        "IMG_2",
-        "IMG_4",
-        "IMG_5",
-        "IMG_7",
-        "IMG_15",
-        "IMG_14",
-        "IMG_9",
-        "IMG_12",
-        "IMG_13",
-        "IMG_19",
-        "IMG_20",
-        "IMG_8",
-        "IMG_16",
-      ],
-    },
-    201804: {
-      name: "Berlin",
-      files: [
-        "IMG_1",
-        "IMG_2",
-        "IMG_3",
-        "IMG_6",
-        "IMG_5",
-      ],
-    },
-    201805: {
-      name: "Switzerland",
-      files: [
-        "IMG_12",
-        "IMG_13",
-        "IMG_14",
-        "IMG_18",
-        "IMG_15",
-        "IMG_20",
-        "IMG_17",
-      ],
-    },
-    201712141: {
-      name: "Floral Velvet Blues",
-      files: [
-        "IMG_2782",
-        "IMG_2846",
-        "IMG_2780",
-      ],
-    },
-    201712142: {
-      name: "Violet Paradise",
-      files: [
-        "IMG_2811",
-        "IMG_2798",
-        "IMG_2917",
-        "IMG_2922",
-      ],
-    },
-    201710181: {
-      name: "Angst",
-      files: [
-        "IMG_1869",
-        "IMG_1894",
-        "IMG_1935",
-      ],
-    },
-    201710182: {
-      name: "Engineering Quad",
-      files: [
-        "IMG_1986",
-        "IMG_2007",
-      ],
-    },
-    0: {
-      name: "XXXX",
-      files: [
-        "IMG_32",
-        "IMG_33",
-        "IMG_30",
-        "IMG_26",
-        "IMG_24",
-        "IMG_08",
-        "IMG_09",
-        "IMG_10",
-        "IMG_05",
-        "IMG_16",
-        "IMG_31",
-        "IMG_13",
-        "IMG_04",
-        "IMG_101",
-        "IMG_102",
-      ]
-    }
-  };
-
   var projects = {
     0: {
       name: "Salmon",
@@ -157,7 +60,6 @@ var main = (function(){
   };
 
   var files = {
-    photography: photography,
     projects: projects,
   };
 
@@ -214,18 +116,6 @@ var main = (function(){
     window.scrollTo(0,0);
   }
 
-  function loadPhotos(folder) {
-    selectSubheader(folder);
-    var project = files.photography[folder];
-    var list = project.files;
-    var $page = $('#photography-content');
-    $page.empty();
-    for (var i in list) {
-      $page.append('<img src="images/photography/' + folder + '/' + list[i] +'.jpg" class="img-responsive">');
-    }
-    window.scrollTo(0,0);
-  }
-
   function loadSubheader(page) {
     var currFolders = files[page];
     var $subheader = $('.subheader');
@@ -236,9 +126,7 @@ var main = (function(){
       var folder = keys[i];
       var name = currFolders[folder].name;
       var url = '#' + keys[i];
-      if (page === 'photography') {
-        $subheader.append('<a href="' + url + '" class=\'subheader-' + folder + '\' onclick="main.loadPhotos(\'' + folder + '\')">' + name + '</a>');
-      } else if (page === 'projects') {
+      if (page === 'projects') {
         $subheader.append('<a href="' + url + '" class=\'subheader-' + folder + '\' onclick="main.loadProject(\'' + folder + '\')">' + name + '</a>');
       }
       if (i != keys.length - 1) {
@@ -252,7 +140,6 @@ var main = (function(){
     toggleNav: toggleNav,
     checkHash: checkHash,
     loadProject: loadProject,
-    loadPhotos: loadPhotos,
     loadSubheader: loadSubheader,
   };
 })();
